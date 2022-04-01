@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes(['verify'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//admin route
+Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function(){
+
+Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
+});
