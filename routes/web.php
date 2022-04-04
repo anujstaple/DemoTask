@@ -30,5 +30,13 @@ Route::post('/attached', [App\Http\Controllers\HomeController::class, 'attachedP
 //admin route
 Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function(){
 
+
+Route::get('dashborad',[App\Http\Controllers\Admin\DashboardController::class,'index'])->name('admin_dashborad');;
 Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
 });
+
+
+
+Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
+    ->middleware(['signed', 'throttle:6,1'])
+    ->name('verification.verify');
