@@ -21,6 +21,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -49,4 +50,5 @@ class User extends Authenticatable implements MustVerifyEmail
      public function isUser(){
        return $this->role === 'user';
     }
+
 }

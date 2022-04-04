@@ -13,4 +13,10 @@ class Product extends Model
     protected $table ='products';
 
     protected $fillable = ['name','description','image','price','total_qty','status'];
+
+
+
+     public function assignproduct(){
+     return $this->belongsTo('App\Models\UserProduct','id','product_id');
+  }
 }
