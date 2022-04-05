@@ -31,7 +31,7 @@ Route::post('/attached', [App\Http\Controllers\HomeController::class, 'attachedP
 Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin'],function(){
 
 
-Route::get('dashborad',[App\Http\Controllers\Admin\DashboardController::class,'index'])->name('admin_dashborad');;
+Route::any('dashborad',[App\Http\Controllers\Admin\DashboardController::class,'index'])->name('admin_dashborad');;
 Route::resource('products', App\Http\Controllers\Admin\ProductController::class);
 });
 
