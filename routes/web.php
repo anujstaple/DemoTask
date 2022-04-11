@@ -22,7 +22,7 @@ Auth::routes(['verify'=>true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/productlist', [App\Http\Controllers\HomeController::class, 'productlist'])->name('home');
+Route::get('/productlist', [App\Http\Controllers\HomeController::class, 'productlist'])->name('productlist');
 
 
 Route::post('/attached', [App\Http\Controllers\HomeController::class, 'attachedProduct'])->name('attached');

@@ -27,12 +27,13 @@
                     <form action="{{route('attached')}}" method="post">
                         @csrf
                     <tr> <td>{{$pro->title}}</td>
-                        <td> {{$pro->price}}</td>
-                        <td> <input type="number" name="qty" min="1"></td>
+                       <td> <input type="text" name="price" value="{{$pro->price}}"></td>
+
+                        <td> <input type="number" name="qty" value="{{$pro->qty}}"></td>
 
                         <input type="hidden" name="id" value="{{$pro->id}}">
 
-                        <td><input type="submit" name="submit" value="attach"></td>
+                        <td><input type="submit" name="submit" value="{{($pro->qty) ? 'Update' : 'Attach'}}"></td>
 
                         </form>
 
